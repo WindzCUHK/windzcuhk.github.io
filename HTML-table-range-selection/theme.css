@@ -1,0 +1,46 @@
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	margin: 1em 0;
+	color: #0C0020;
+}
+td {
+	border: 1px solid #9F9799;
+}
+
+#testing-table-1 {
+	background-color: #ABCFD1;
+}
+#testing-table-2 {
+	background-color: #F9B6C8;
+}
+#testing-table-3 {
+	background-color: #BA85E5;
+}
+
+@keyframes blink {
+	from {
+		background-color: #FDD456;
+	}
+	to {
+		background-color: #F57ABA;
+	}
+}
+.remainder {
+	text-align: center;
+	font-size: x-large;
+	display: block;
+	margin-top: 2em;
+}
+.remainder > span {
+	padding: 0.5ex;
+	border-radius: 1ex;
+	background-color: #FDD456;
+	animation: blink 1s linear 0s infinite alternate;
+}
+.remainder > textarea {
+	margin: 1em;
+	width: 50%;
+	height: 10em;
+}
