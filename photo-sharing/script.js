@@ -2,7 +2,7 @@ var swiper = new Swiper('.swiper-container', {
   slidesPerView: 1,
   spaceBetween: 20,
   effect: 'fade',
-  loop: true,
+  loop: false,
   speed: 300,
   mousewheel: {
     invert: false,
