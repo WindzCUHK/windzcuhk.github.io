@@ -158,10 +158,6 @@ p {
      object-fit: contain;
   transition: 0.2s;
 }
-.slider-image-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
 
 .swiper-pagination {
   position: absolute;
