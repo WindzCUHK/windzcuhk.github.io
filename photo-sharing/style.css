@@ -24,6 +24,7 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 32px;
+  padding-bottom: env(safe-area-inset-bottom);
 }
 
 @-webkit-keyframes gradient {
@@ -153,9 +154,13 @@ p {
 .slider-image {
   width: 100%;
   height: 100%;
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  -o-object-fit: contain;
+     object-fit: contain;
   transition: 0.2s;
+}
+.slider-image-cover {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .swiper-pagination {
