@@ -12,3 +12,5 @@
 - https://windzcuhk.github.io/archive/test-three/wing.html
 - https://windzcuhk.github.io/HTML-table-range-selection/index.html
 - https://windzcuhk.github.io/marry-me/index.html
+- https://windzcuhk.github.io/photo-sharing/index.html
+
