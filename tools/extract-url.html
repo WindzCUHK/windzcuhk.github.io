@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			* {
+				margin: 0px;
+				border: none;
+				padding: 0px;
+			}
+			html {
+				height: 100%;
+			}
+			body {
+				text-align: center;
+				background-color: black;
+				height: 100%;
+			}
+			textarea {
+				width: 100%;
+				height: 50%;
+			}
+			#display {
+				text-align: left;
+				position: fixed;
+				bottom: 0;
+			}
+			#open-all {
+				width: 70%;
+				height: 60px;
+				font-size: xx-large;
+				color: red;
+			}
+			a {
+				display: block;
+				color: lightskyblue;
+			}
+		</style>
+	</head>
+	<body>
+		<textarea id="paste-me"></textarea>
+		<button id="open-all">Open all</button>
+		<div id="display"></div>
+
+		<script>
+			const regex = /https:\/\/pointi\.jp\/al\/click_mail_magazine\.php.+/gm;
+			const displayEle = document.getElementById('display');
+			const linkDict = {};
+
+			const buttonEle = document.getElementById('open-all');
+			buttonEle.addEventListener('click', (e) => {
+				Object.keys(linkDict).forEach((l) => {
+					window.open(l);
+				});
+			});
+
+			const textEle = document.getElementById('paste-me');
+			textEle.contentEditable = true; // important!!!
+			textEle.addEventListener('input', (e) => {
+				const target = e.target;
+				const content = target.value;
+				const results = content.match(regex);
+
+				// has links
+				if (results) {
+					results.forEach((l) => {
+						// display
+						const aEle = document.createElement('a');
+						aEle.textContent = l;
+						aEle.href = l;
+						displayEle.appendChild(aEle);
+
+						// record link
+						linkDict[l] = true;
+					});
+					// clear text area
+					target.value = "";
+				}
+				console.log(results)
+			});
+			/*
+			textEle.addEventListener('keydown', (e) => {
+				console.log('keydown', e.ctrlKey, e.metaKey, e.code, e.key);
+				const isMeta = e.ctrlKey || e.metaKey;
+				if (isMeta && e.code === 'KeyV' && e.key === 'v') {
+					// user pasted, but input content still not available
+				}
+			});
+			*/
+
+		</script>
+	</body>
+</html>
